@@ -22,6 +22,7 @@
             buildInputs = [
               poetry
               pkg-config
+              ripgrep # just for the sake of highlighting
               python311
               tailwindcss
               python311Packages.flask
@@ -30,8 +31,11 @@
 
             shellHook = ''
               # setup dependencies
-              poetry install
-              poetry lock
+              poetry install -q
+              echo "Poetry updates: $(poetry update --dry-run | rg updates)"
+              poetry lock -q
+              npm install --silent
+              echo "Nodejs updates: $(npm update --dry-run | rg --color=never 'in \d+ms')"
               # check htmx version
               ./scripts/check_htmx_version.sh
               # run development environment
@@ -40,7 +44,6 @@
               # cleanup everything after running exit (quitting poetry shell)
               killall tailwindcss
               killall flask
-              killall python
               exit
             '';
 
