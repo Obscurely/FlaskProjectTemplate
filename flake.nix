@@ -38,6 +38,8 @@
               echo "Nodejs updates: $(npm update --dry-run | rg --color=never 'in \d+ms')"
               # check htmx version
               ./scripts/check_htmx_version.sh
+              # check alpinejs version
+              ./scripts/check_alpinejs_version.sh
               # run development environment
               poetry run ./scripts/run_dev.sh
               poetry run zsh
