@@ -35,7 +35,7 @@
               poetry install -q
               echo "Poetry updates: $(poetry update --dry-run | rg updates)"
               npm install --silent
-              echo "Nodejs updates: $(npm update --dry-run | rg --color=never 'in \d+ms')"
+              echo "Nodejs updates: $(npm update --dry-run | rg --color=never 'in \d+')"
               # check htmx version
               ./scripts/check_htmx_version.sh
               # check alpinejs version
