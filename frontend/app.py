@@ -12,6 +12,7 @@ assets.register("js", js)
 css.build()
 js.build()
 
+
 @app.route("/")
 def homepage():
     return render_template("index.html")

@@ -31,9 +31,9 @@
 
             shellHook = ''
               # setup dependencies
+              poetry lock -q
               poetry install -q
               echo "Poetry updates: $(poetry update --dry-run | rg updates)"
-              poetry lock -q
               npm install --silent
               echo "Nodejs updates: $(npm update --dry-run | rg --color=never 'in \d+ms')"
               # check htmx version
@@ -51,6 +51,7 @@
 
             FLASK_DEBUG = 1;
             FLASK_APP = "frontend/app";
+            FLASK_ENV = "development";
           };
         }
     );

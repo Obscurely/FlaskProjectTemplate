@@ -66,8 +66,9 @@ necessary tools.
 
 Once inside the Nix shell all you have to do is go over to
 [localhost:5000](http://localhost:5000) and view the application. Any changes
-you make to the html will be automatically reflected on the page without the
-need of refreshing.
+you make to the python will be automatically reflected on the page without the
+need of refreshing. Any changes made to the templates will require a refresh.
+Implementing something to work like liveserver is possilbe, but harder.
 
 ## Check for Dependency Updates
 
